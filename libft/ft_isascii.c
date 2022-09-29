@@ -17,7 +17,7 @@ int	ft_isascii(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		while (str[i] >= 0  && str[i] <= 127)
+		while (str[i] >= 0 && str[i] <= 127)
 		{
 			i++;
 		}

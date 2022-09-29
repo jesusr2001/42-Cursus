@@ -30,4 +30,3 @@ int	ft_isalnum(char *str)
 	}	
 	return (1);
 }
-
