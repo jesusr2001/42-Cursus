@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jerodrig <jerodrig@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 20:28:28 by jerodrig          #+#    #+#             */
-/*   Updated: 2022/09/26 20:28:32 by jerodrig         ###   ########.fr       */
+/*   Created: 2022/09/30 13:56:32 by jerodrig          #+#    #+#             */
+/*   Updated: 2022/09/30 14:00:03 by jerodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	character;
+	size_t	i;
+	size_t	c;
+	size_t	n_len;
+	char	*hay;
 
-	str = (unsigned char *)s;
-	character = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	hay = (char *)haystack;
+	n_len = ft_strlen(needle);
+	if (n_len == 0 || haystack == needle)
+		return (hay);
+	while (hay[i] != '\0' && i < len)
 	{
-		if (*str == character)
-		{
-			return (str);
-		}
-		str++;
+		c = 0;
+		while (hay[i + c] != '\0' && needle[c] != '\0'
+			&& hay[i + c] == needle[c] && i + c < len)
+			c++;
+		if (c == n_len)
+			return (hay + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
