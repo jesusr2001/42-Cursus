@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 int	whitespaces(char *str, int *ptr_i)
 {
