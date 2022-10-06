@@ -6,27 +6,13 @@
 /*   By: jerodrig <jerodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:24:21 by jerodrig          #+#    #+#             */
-/*   Updated: 2022/09/26 17:31:22 by jerodrig         ###   ########.fr       */
+/*   Updated: 2022/10/05 11:13:30 by jerodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char *str)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] >= 0 && str[i] <= 127)
-		{
-			i++;
-		}
-		if (str[i] != '\0')
-		{
-			return (0);
-		}
-	}
-	return (1);
+	return (c >= 0 && c <= 127);
 }

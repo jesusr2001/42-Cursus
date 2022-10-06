@@ -6,11 +6,12 @@
 /*   By: jerodrig <jerodrig@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:50:28 by jerodrig          #+#    #+#             */
-/*   Updated: 2022/09/29 18:07:37 by jerodrig         ###   ########.fr       */
+/*   Updated: 2022/10/05 11:56:42 by jerodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static char	*ft_array(char *x, unsigned int number, long int len)
 {

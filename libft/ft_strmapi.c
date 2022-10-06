@@ -11,22 +11,26 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*sptr;
-	int		index;
+	char	*new_string;
+	size_t	i;
 
-	if (!s || !f)
-		return (NULL);
-	if (!(sptr = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	index = 0;
-	while (s[index])
+	if (s != NULL)
 	{
-		sptr[index] = f(index, s[index]);
-		++index;
+		i = 0;
+		new_string = malloc(sizeof(char) * (ft_strlen(s) + 1));
+		if (new_string == NULL)
+			return (NULL);
+		while (i < ft_strlen(s))
+		{
+			new_string[i] = f((unsigned int)i, s[i]);
+			i++;
+		}
+		new_string[i] = 0;
+		return (new_string);
 	}
-	sptr[index] = '\0';
-	return (sptr);
+	return (NULL);
 }

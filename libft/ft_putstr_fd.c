@@ -6,11 +6,12 @@
 /*   By: jerodrig <jerodrig@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:52:24 by jerodrig          #+#    #+#             */
-/*   Updated: 2022/09/27 12:52:25 by jerodrig         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:08:40 by jerodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {
